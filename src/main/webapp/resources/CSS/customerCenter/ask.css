@@ -1,0 +1,162 @@
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+ /* 고객센터 */
+ #customerCenter {
+     width: 500px;
+     height: 50px;
+     float: right;
+ }
+ #customerCenter ul li {
+     float: right;
+     margin-right: 0;
+ }
+ #customerCenter ul li a {
+     text-align: right;
+     float: right;
+     margin-left: 20px;
+ }
+
+main {
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* 고객센터 메뉴 */
+#center {
+    width: 900px;
+    height: 100px;
+}
+
+    #centerMenu  {
+        width: 500px;
+        height: 50px;
+        float: left;
+    }
+
+    #centerMenu li:last-child {
+        background-color: rgb(252, 117, 7);
+    }
+
+    #centerMenu li:last-child a {
+        color: white;
+    }
+
+    #centerMenu li {
+        padding: 10px;
+        font-size: medium;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background-color: #ccc;
+    }
+
+    #centerSearch {
+        padding-top: 20px;
+        width: 400px;
+        height: 50px;
+        float: right;
+        position: relative;
+    }
+        #centerSearch input {
+            float: right;
+            padding: 5px 5px 5px 35px;
+            width: 250px;
+            height: 30px;
+            outline: none;
+        }
+
+        #centerSearch img {
+            width: 20px;
+            position: absolute;
+            top: 25px;
+            right : 225px;
+        }
+        
+/* 게시판 */
+#ask {
+    width: 900px;
+    height: 300px;
+}
+    table {
+        width: 900px;
+        height: 200px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+
+	#tableHead {
+		width: 100%;
+		height: 35px;
+	}
+	
+    th {
+        font-size: 1.2em;
+    }
+
+#askBtn {
+    float: right;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.askBtn:hover {
+        background-color: rgb(252, 117, 7);
+        color: white;
+    }
+
+#pages {
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    #pages ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        align-items: center;
+        height: 50px;
+        }
+	#pages ul li {
+        display: flex;
+        flex-direction: row;
+	}
+	
+    #pages li a{
+        margin: 10px;
+        padding: 5px 10px 5px 10px;
+        color: gray;
+        font-weight: 500;
+        background-color: #ecebeb;
+        border-radius: 5px;
+    }
+
+     #pages li a:focus {
+        background-color: rgb(252, 117, 7);
+        color: white;
+    }
+    #pages li a:hover {
+        background-color: rgb(252, 117, 7);
+        color: white;
+    }
+    
+
+

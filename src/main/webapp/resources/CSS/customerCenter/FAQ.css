@@ -1,0 +1,141 @@
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+main {
+    width: 900px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+/* 고객센터 메뉴 */
+#center {
+    width: 900px;
+    height: 100px;
+}
+
+    #centerMenu  {
+        width: 500px;
+        height: 50px;
+        float: left;
+    }
+
+    #centerMenu li:nth-last-child(2) {
+        background-color: rgb(252, 117, 7);
+    }
+
+    #centerMenu li:nth-last-child(2) a {
+        color: white;
+    }
+
+    #centerMenu li {
+        padding: 10px;
+        font-size: medium;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background-color: #ccc;
+    }
+
+    #centerSearch {
+        padding-top: 20px;
+        width: 400px;
+        height: 50px;
+        float: right;
+        position: relative;
+    }
+        #centerSearch input {
+            float: right;
+            padding: 5px 5px 5px 35px;
+            width: 250px;
+            height: 30px;
+            outline: none;
+        }
+
+        #centerSearch img {
+            width: 20px;
+            position: absolute;
+            top: 25px;
+            right : 225px;
+        }
+/* 게시판 */
+#FAQ {
+    width: 900px;
+    height: 350px;
+}
+    table {
+        width: 900px;
+        height: 250px;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th, td {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+
+    th {
+        font-size: 1.2em;
+    }
+
+#pages {
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    #pages ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        align-items: center;
+        height: 50px;
+        }
+
+    #pages li {
+        margin: 10px;
+        padding: 5px 10px 5px 10px;
+        display: flex;
+        color: gray;
+        font-size: 1.3em;
+        font-weight: 500;
+        background-color: #ecebeb;
+        border-radius: 5px;
+    }
+
+    #pages li:first-child {
+        background-color: rgb(252, 117, 7);
+        color: white;
+    }
+
+/* 푸터 */
+footer {
+    width: 1200px;
+    height: 70px;
+    border-top: 2px solid #ccc;
+    margin: 0 auto;
+}
+
+    footer ul {
+        margin-top: 10px;
+    }
+
+    footer li {
+        color: gray;
+        font-size: smaller;
+        font-weight: 100;
+        border-right: 1px solid #a0a0a0;
+        padding-right: 20px;
+        margin: 5px;
+    }
+
+    footer li:last-child {
+        border: none;
+    }

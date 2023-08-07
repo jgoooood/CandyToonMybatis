@@ -1,0 +1,414 @@
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* 헤더 */
+header {
+    width: 1200px;
+    margin: 0 auto;
+    height: 200px;
+}
+#logo {
+    width: 480px;
+    height: 100px;
+    float: left;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Bungee', cursive;
+    font-size: 3em;
+    color: rgb(252, 117, 7);
+}
+
+    #logo a:link, #logo a:visited {
+        color:  rgb(252, 117, 7);
+    }
+    
+    #searchArea {
+        width: 300px;
+        height: 100px;
+        display: flex;
+        float: right;
+        justify-content: end;
+    }
+    
+    .search {
+        position: relative;
+        width: 300px;
+        display: flex;
+    }
+
+        .search input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: 2px solid rgb(252, 117, 7);
+            border-radius: 10px;
+            border-collapse: collapse;
+            display: flex;
+            align-self: flex-end;
+            justify-content: end;
+            position: relative;
+            outline: none;
+
+        }
+
+        #searchArea img {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            top: 65px;
+            right: 10px;
+            margin: 0;
+            
+        }
+    /*네비게이션  */
+    nav {
+        width: 1200px;
+        height: 60px;
+        border-bottom: 2px solid gray;
+        margin: 20px auto;
+        display: inline-block;
+    }
+        /* 네비 리스트 */
+        /* 메인메뉴 */
+        nav ul {
+            list-style-type: none;
+            padding-top: 10px;
+        }
+        nav ul li {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.4em;
+            margin-right: 20px;
+        }
+
+        #mainMenu ul li a {
+            text-align: left;
+            float: left;
+        }
+        #mainMenu {
+            width: 700px;
+            height: 50px;
+            float: left;
+        }
+        /* 고객센터 */
+        #customerCenter {
+            width: 500px;
+            height: 50px;
+            float: right;
+            --background-color: pink;
+        }
+        #customerCenter ul li {
+            float: right;
+            margin-right: 0;
+        }
+        #customerCenter ul li a {
+            text-align: right;
+            float: right;
+            margin-left: 20px;
+        }
+
+main {
+    width: 900px;
+    height: 1300px;
+    margin: 0 auto;
+}
+    /* 웹툰 상세정보 */
+    #detailHeader {
+        width: 900px;
+        height: 520px;
+    }
+        #detailContent {
+            display: flex;
+            height: 270px;
+        }
+            #detailCover img {
+                width: 200px;
+                height: 270px;
+            }
+
+            #detailInfo {
+                padding-top: 20px;
+                height: 270px;
+                width: 680px;
+                margin-left: 20px;
+                line-height: 25px;
+            }
+                #detailInfo h1 {
+                    margin-top: 5px;
+                    height: 50px;
+                }
+
+                .writerInfo, .genre {
+                    color: gray;
+                }
+
+                #likeBtn {
+                    width: 130px;
+                    height: 40px;
+                    background-color: rgb(252, 117, 7);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                }
+                #likeBtn:hover{
+                    background-color: rgb(231, 51, 6);
+                }
+
+            #detailStory {
+                border-top: 2px solid #ccc;
+                width: 900px;
+                height: 200px;
+                display: block;
+                margin-top: 30px;
+            }
+            
+        /* 구매탭 */
+        #buyOpt {
+            display: flex;
+            border-top: 2px solid #ccc;
+        }
+            #buyOpt ul {
+                display: flex;
+                flex-direction: row;
+                list-style-type: none;
+            }
+            #buyOpt li {
+                width: 450px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.4em;
+                font-weight: bold;
+                padding: 10px;
+                border: 1px solid #ccc;
+                
+            }
+            #buyOpt li:first-child {
+                background-color: white;
+            }
+            #buyOpt li:last-child {
+                background-color: #ccc;
+            }
+            #buyOpt a:hover {
+                color: rgb(252, 117, 7);
+            }
+            
+
+        /* 옵션 */
+        #option {
+            width: 900px;
+            height: 70px;
+            padding-bottom: 15px;
+            display: flex;
+            border-bottom: 2px solid #ccc;
+        }
+            #listOpt {
+                width: 450px;
+                height: 50px;
+                display: flex;
+                align-items: end;
+            }
+                #listOpt ul {
+                    display: flex;
+                    list-style-type: none;
+                    flex-direction: row;
+                }
+                
+                #listOpt ul li {
+                    width: 120px;
+                    height: 20px;
+                }
+                #listOpt li:nth-child(2) {
+                    text-align: right;
+                    padding-right: 20px;
+                    border-right: 1px solid #ccc;
+                }
+                
+                #listOpt li:last-child {
+                    text-align: left;
+                    padding-left: 20px;
+                }
+
+            #selectBtn {
+                width: 450px;
+                height: 50px;
+                display: flex;
+                align-items: end;
+                justify-content: end;
+            }
+
+                #selectBtn button {
+                    width: 100px;
+                    height: 40px;
+                    background-color: rgb(252, 117, 7);
+                    color: white;
+                    border: none;
+                    font-size: 1em;
+                    font-weight: 600;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                #selectBtn button:hover{
+                    background-color: rgb(231, 51, 6);
+                }
+        /* 리스트 */
+        #list {
+            display: flex;
+            flex-direction: column;
+        }
+        .listDetail {
+            height: 90px;
+            display: flex;
+            border-bottom: 1px solid rgb(250, 213, 187);
+        }
+        .listDetail:hover {
+            background-color: rgb(250, 213, 187);
+        }
+
+            #list ul {
+                list-style-type: none;
+            }
+
+            #list li {
+                display: flex;
+                flex-direction: row;
+            }
+            .listBox {
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .thumbnail {
+                width: 90px;
+                display: flex;
+                align-items: center;
+            }
+                .thumbnail img{
+                    height: 80px;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-items: center;
+                }
+            .series {
+                width: 660px;
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+                .title {
+                    font-weight: 600;
+                    font-size: 1.2em;
+                }
+                .date {
+                    color: gray;
+                }
+
+            .btn {
+                width: 100px;
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                justify-content: center;
+            }
+            /* 무료보기 */
+            .freeBtn {
+                width: 60px;
+                height: 40px;
+                border: 2px solid gray;
+                color: gray;
+                font-weight: 600;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .freeBtn:hover{
+                background-color: rgb(252, 117, 7);
+                color:white;
+                border: 2px solid white;
+            }
+            /* 대여하기 */
+            .boughtBtn {
+                width: 60px;
+                height: 40px;
+                border: 2px solid rgb(252, 117, 7);
+                background-color: white;
+                color: rgb(252, 117, 7);
+                font-weight: 600;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .boughtBtn:hover {
+                color: rgb(231, 51, 6);
+                border-color: rgb(231, 51, 6);
+            }
+            /* 소장하기 */
+            .buyBtn {
+                width: 60px;
+                height: 40px;
+                background-color: rgb(252, 117, 7);
+                border: none;
+                color: white;
+                font-weight: 600;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .buyBtn:hover{
+                background-color: rgb(231, 51, 6);
+
+            }
+        /* 더보기 */
+        #viewBtn {
+            width: 900px;
+            height: 100px;
+            margin-top: 30px;
+        }
+        #viewAll {
+            width: 900px;
+            height: 50px;
+            font-weight: 600;
+            background-color: rgb(252, 117, 7);
+            color: white;
+            font-size:1.3em;
+            border: none;
+            border-radius: 5px;
+        }
+        #viewAll:hover{
+            background-color: rgb(231, 51, 6);
+        }
+
+/* 푸터 */
+footer {
+    width: 1200px;
+    height: 70px;
+    border-top: 2px solid #ccc;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+footer li {
+    color: gray;
+    font-size: smaller;
+    font-weight: 100;
+    border-right: 1px solid #a0a0a0;
+    padding-right: 20px;
+    margin: 5px;
+    display: inline-block;
+}
+
+footer li:last-child {
+    border: none;
+}
+
+
+

@@ -1,0 +1,78 @@
+
+#join {
+    width: 600px;
+    height: 700px;
+    margin: 70px auto;
+}
+
+/* 회원가입 로고 */
+#joinLogo {
+    text-align: center;
+    color: rgb(252, 117, 7);
+    line-height: 55px;
+    height: 150px;
+}
+    #joinLogo p {
+        font-family: 'Black Han Sans', sans-serif;
+        font-family: 'Bungee', cursive;
+        font-size: 3em;
+    }
+
+/* 회원가입 입력창 */
+#userInput {
+    margin: 0 auto;
+    width: 390px;
+    height: 370px;
+    line-height: 50px;
+}
+    label {
+        text-align: left;
+        width: 130px;
+        float: left;
+    }
+
+    ul li:first-child {
+        font-weight: bolder;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        color: black;
+    }
+    ul li {
+        list-style-type: none;
+        font-size: 1.2em;
+        color: #8f8e8e;
+    }
+    
+    input {
+        padding-left: 5px;
+        width: 250px;
+        height: 35px;
+        outline: none;
+    }
+
+
+/* 회원가입 버튼 */
+#joinBtn {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+    #joinBtn button {
+        width: 300px;
+        height: 50px;
+        background-color: rgb(252, 117, 7);
+        border-radius: 5px;
+        color: white;
+        font-size: larger;
+        font-weight: bolder;
+        border: none;
+        padding: 0;
+    }
+
+    #joinBtn a:link, #joinBtn a:visited {
+        color: white;
+        text-decoration: none;
+    }
+
