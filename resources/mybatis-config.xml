@@ -21,5 +21,6 @@
 <!-- mapper등록 -->
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml" />
+		<mapper resource="mappers/ask-mapper.xml" />
 	</mappers>
 </configuration>

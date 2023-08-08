@@ -13,30 +13,36 @@
 		
         <!-- 메인 -->
         <main>
-          <form>
+            <form action="/ask/modify.do" method="post">
 		        <c:if test="${sessionScope.memberId ne null }">
-		            <h1>${memberId }님의 문의내역</h1>
+		            <h1>문의내역 수정</h1>
 		            <div id="userAsk">
 		            	<input type="hidden" name="memberId" value="${sessionScope.memberId}">
+		            	<input type="hidden" name="askNo" value="${ask.askNo}">
 		                <table>
 		                    <tr>
 		                        <th id="askType">문의유형</th>
-		                        <td><input type="text" id="askCategory" name="askCategory" required value="${ask.askCategory }"></td>
+		                        <td>
+		                            <select id="selectType" name="askCategory" required>
+		                                <option value="결제/환불">결제/환불</option>
+		                                <option value="사이트이용">사이트이용</option>
+		                                <option value="이벤트">이벤트</option>
+		                                <option value="기타">기타</option>
+		                            </select>
+		                        </td>
 		                    </tr>
 		                    <tr id="askTitle">
 		                        <th>제목</th>
-		                        <td><input type="text" name="askSubject" required value="${ask.askSubject }"></td>
+		                        <td><input type="text" name="askSubject" required placeholder="제목을 입력해주세요."></td>
 		                    </tr>
 		                    <tr id="askContent">
 		                        <th>내용</th>
-		                        <td><textarea name="askContent" required>${ask.askSubject }</textarea></td>
+		                        <td><textarea name="askContent" placeholder="문의하실 내용을 입력해주세요." required></textarea></td>
 		                    </tr>
 		                </table>
 		            </div>
 		            <div>
-		                <button id="askBtn"><a href="/ask/modify.do?askNo=${ask.askNo}">수정하기</a></button>
-		                <button id="askBtn"><a href="/ask/delete.do?askNo=${ask.askNo}">삭제하기</a></button>
-		                <button id="askBtn"><a href="/ask/list.do">목록이동</a></button>
+		                <button id="askBtn" type="submit">수정완료</button>
 		            </div>
 		        </c:if>
 	        </form>

@@ -24,6 +24,16 @@ public class Ask {
 		this.askWriter = askWriter;
 	}
 	
+	
+
+	public Ask(int askNo, String askCategory, String askSubject, String askContent) {
+		super();
+		this.askNo = askNo;
+		this.askCategory = askCategory;
+		this.askSubject = askSubject;
+		this.askContent = askContent;
+	}
+
 	public String getAskCategory() {
 		return askCategory;
 	}

@@ -1,7 +1,6 @@
 package customerCenter.ask.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +11,16 @@ import customerCenter.ask.model.service.AskService;
 import customerCenter.ask.model.vo.Ask;
 
 /**
- * Servlet implementation class AskDetailController
+ * Servlet implementation class AskModifyController
  */
-@WebServlet("/ask/detail.do")
-public class AskDetailController extends HttpServlet {
+@WebServlet("/ask/modify.do")
+public class AskModifyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AskDetailController() {
+    public AskModifyController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,22 +32,30 @@ public class AskDetailController extends HttpServlet {
 		AskService service = new AskService();
 		int askNo = Integer.parseInt(request.getParameter("askNo")); 
 		Ask ask = service.selectOneByNo(askNo);
-		if(ask != null) {
-			request.setAttribute("ask", ask);
-			request.getRequestDispatcher("/WEB-INF/views/customerCenter/ask/askDetail.jsp").forward(request, response);
-		} else {
-			request.setAttribute("msg", "작성글을 불러올 수 없습니다.");
-			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
-		}
+		request.setAttribute("ask", ask);
+		request.getRequestDispatcher("/WEB-INF/views/customerCenter/ask/askModify.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		int aksNo = Integer.parseInt(request.getParameter("askNo"));
+		String askCategory = request.getParameter("askCategory");
+		String askSubject = request.getParameter("askSubject");
+		String askContent = request.getParameter("askContent");
+		Ask ask = new Ask(aksNo, askCategory, askSubject, askContent);
+		AskService service = new AskService();
+		int result = service.updateAsk(ask);
+		if(result > 0) {
+			request.setAttribute("ask", ask);
+			request.getRequestDispatcher("/ask/detail.do").forward(request, response);
+		} else {
+			request.setAttribute("msg", "수정이 완료되지 않았습니다.");
+			request.setAttribute("url", "/ask/modify.do");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+		}
 	}
 
 }

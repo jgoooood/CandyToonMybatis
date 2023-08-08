@@ -9,19 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import customerCenter.ask.model.service.AskService;
-import customerCenter.ask.model.vo.Ask;
 
 /**
- * Servlet implementation class AskDetailController
+ * Servlet implementation class DeleteController
  */
-@WebServlet("/ask/detail.do")
-public class AskDetailController extends HttpServlet {
+@WebServlet("/ask/delete.do")
+public class DeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AskDetailController() {
+    public DeleteController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,15 +29,14 @@ public class AskDetailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int askNo = Integer.parseInt(request.getParameter("askNo"));
 		AskService service = new AskService();
-		int askNo = Integer.parseInt(request.getParameter("askNo")); 
-		Ask ask = service.selectOneByNo(askNo);
-		if(ask != null) {
-			request.setAttribute("ask", ask);
-			request.getRequestDispatcher("/WEB-INF/views/customerCenter/ask/askDetail.jsp").forward(request, response);
+		int result = service.deleteAsk(askNo);
+		if(result > 0) {
+			request.getRequestDispatcher("/ask/list.do").forward(request, response);
 		} else {
-			request.setAttribute("msg", "작성글을 불러올 수 없습니다.");
-			request.setAttribute("url", "/index.jsp");
+			request.setAttribute("msg", "삭제가 완료되지 않았습니다.");
+			request.setAttribute("url", "/ask/list.do");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	}

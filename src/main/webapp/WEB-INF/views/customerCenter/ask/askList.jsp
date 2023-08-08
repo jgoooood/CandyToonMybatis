@@ -26,31 +26,7 @@
                     <img src="../resources/images/icons/centerSearch.png" alt="검색">
                 </div>
             </div>
-            <div id = "ask">
-            	<!-- 이전코드 
-                <table>
-                    <tr>
-                        <th>분류</th>
-                        <th>제목</th>
-                        <th>등록일</th>
-                    </tr>
-                    <tr>
-                        <td>환불</td>
-                        <td><a href="#">캐시충전 환불 요청합니다.</a></td>
-                        <td>2022.01.01</td>
-                    </tr>
-                    <tr>
-                        <td>컨텐츠이용</td>
-                        <td><a href="#">문의합니다.</a></td>
-                        <td>2021.12.05</td>
-                    </tr>
-                    <tr>
-                        <td>이벤트</td>
-                        <td><a href="#">이벤트 참여 문의</a></td>
-                        <td>2021.11.01</td>
-                    </tr>
-                </table> -->
-                
+            <div id = "ask">      
                 <table>
                 	<colgroup>
                 		<col width="15%">

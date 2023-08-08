@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd임포트 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 1. mapper의 이름 지정:여러개이기 때문 -->
+<mapper namespace="AskMapper">
+	<!-- 2. resultMap 설정 -->
+	<resultMap type="customerCenter.ask.model.vo.Ask" id="askResultMap">
+		<id 	property="askNo" 	 	 column="ASK_NO" />
+		<result property="askCategory" 	 column="ASK_CATEGORY" />
+		<result property="askSubject" 	 column="ASK_SUBJECT" />
+		<result property="askContent" 	 column="ASK_CONTENT" />
+		<result property="askWriter" 	 column="ASK_WRITER" />
+		<result property="askDate" 	 	 column="ASK_DATE" />
+	</resultMap>
+	
+	<!-- 3. 쿼리문 등록 -->
+	<insert id="insertAsk">
+		INSERT INTO ASK_TBL VALUES(SEQ_ASKNO.NEXTVAL, #{askCategory}, #{askSubject}, #{askContent}, #{askWriter}, DEFAULT)
+	</insert>
+	
+	<!-- select는 resultMap사용 -->
+	<!-- 공지사항 리스트쿼리 -->
+	<select id="selectAskList" resultMap="askResultMap">
+		SELECT * FROM ASK_TBL ORDER BY ASK_NO DESC
+	</select>
+	<!-- 전체 행 구하는 쿼리 : 컬럼개수 한개+결과값이 숫자이기 때문에 resultType을 int로 지정 -->
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM ASK_TBL
+	</select>
+	
+	<select id="selectOneByNo" resultMap="askResultMap">
+		SELECT * FROM ASK_TBL WHERE ASK_NO = #{askNo}
+	</select>
+	
+	<update id="updateAsk">
+		UPDATE ASK_TBL SET ASK_CATEGORY=#{askCategory}, ASK_SUBJECT=#{askSubject}, ASK_CONTENT=#{askContent} WHERE ASK_NO = #{askNo}
+	</update>
+	
+	<delete id="deleteAsk">
+		DELETE FROM ASK_TBL WHERE ASK_NO = #{askNo}
+	</delete>
+</mapper>
