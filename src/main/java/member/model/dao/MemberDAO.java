@@ -1,39 +1,39 @@
 package member.model.dao;
 
-import java.sql.Connection;
+import org.apache.ibatis.session.SqlSession;
 
 import member.model.vo.Member;
 
 public class MemberDAO {
 
-	public int insertMember(Connection conn, Member member) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insertMember(SqlSession session, Member member) {
+		int result = session.insert("MemberMapper.insertMember", member);
+		return result;
 	}
 
-	public Member loginCheck(Connection conn, Member member) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member loginCheck(SqlSession session, Member member) {
+		Member mOne = session.selectOne("MemberMapper.loginCheck", member);
+		return mOne;
 	}
 
-	public Member selectOneById(Connection conn, String memberId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member selectOneById(SqlSession session, String memberId) {
+		Member member = session.selectOne("MemberMapper.selectOneById", memberId);
+		return member;
 	}
 
-	public Member confirmPw(Connection conn, Member member) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member confirmPw(SqlSession session, Member member) {
+		Member confrimOne = session.selectOne("MemberMapper.confirmPw", member);
+		return confrimOne;
 	}
 
-	public int changePw(Connection conn, Member member) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int changePw(SqlSession session, Member member) {
+		int result = session.update("MemberMapper.changePw", member);
+		return result;
 	}
 
-	public Member findId(Connection conn, Member member) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member findId(SqlSession session, Member member) {
+		Member findMember = session.selectOne("MemberMapper.findId", member);
+		return findMember;
 	}
 
 }

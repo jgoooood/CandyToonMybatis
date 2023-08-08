@@ -49,11 +49,11 @@ public class ChangePwController extends HttpServlet {
 		if(result > 0) {
 			request.setAttribute("msg", "[비밀번호 변경완료] 로그인 페이지로 이동합니다.");
 			request.setAttribute("url", "/member/login.do");
-			request.getRequestDispatcher("/WEB-INF/common/serviceSuccess.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 
 			request.setAttribute("msg", "[비밀번호 변경실패] 입력정보를 확인해주세요.");
-			request.getRequestDispatcher("/WEB-INF/common/serviceFailed.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	}
 

@@ -1,1 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- dtd임포트 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 1. mapper의 이름 지정:여러개이기 때문 -->
+<mapper namespace="MemberMapper">
+	<!-- 2. resultMap 설정 -->
+	<resultMap type="member.model.vo.Member" id="memberResultMap">
+		<id 	property="memberId" 	 column="MEMBER_ID" />
+		<result property="memberPw" 	 column="MEMBER_PW" />
+		<result property="memberEmail" 	 column="MEMBER_EMAIL" />
+		<result property="memberName" 	 column="MEMBER_NAME" />
+		<result property="regiDate" 	 column="REGI_DATE" />
+	</resultMap>
+	
+	<!-- 3. 쿼리문 등록 -->
+	<insert id="insertMember">
+		INSERT INTO MEMBER_TBL VALUES(#{memberId}, #{memberPw}, #{memberEmail}, #{memberName}, DEFAULT)
+	</insert>
+	
+	<select id="loginCheck" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw} 
+	</select>
+
+	<select id="selectOneById" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	<select id="findId" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName} AND MEMBER_EMAIL = #{memberEmail}
+	</select>
+	
+	<select id="confirmPw" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_EMAIL = #{memberEmail}
+	</select>
+	
+	<update id="changePw">
+		UPDATE MEMBER_TBL SET MEMBER_PW = #{memberPw} WHERE MEMBER_ID = #{memberId}
+	</update>
+</mapper>

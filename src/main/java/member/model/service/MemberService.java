@@ -1,68 +1,73 @@
 package member.model.service;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
-import common.JDBCTemplate;
+import org.apache.ibatis.session.SqlSession;
+
+import common.SqlSessionTemplate;
 import member.model.dao.MemberDAO;
 import member.model.vo.Member;
 
 public class MemberService {
-	JDBCTemplate jdbcTemplate;
 	MemberDAO mDao;
 	
 	public MemberService() {
 		mDao = new MemberDAO();
-		jdbcTemplate = JDBCTemplate.getInstance();
 	}
 	
 	public int insertMember(Member member) {
-		//연결생성 메소드 호출
-		Connection conn = jdbcTemplate.createConnection();
+		//mybatis 연결생성
+		SqlSession session = SqlSessionTemplate.getSqlSession();
 		// DAO에 연결생성값과 user정보 전달
-		int result = mDao.insertMember(conn, member);
+		int result = mDao.insertMember(session, member);
 		if (result > 0) {
-			jdbcTemplate.commit(conn); //인서트 성공하면 커밋메소드 호출
+			session.commit(); //인서트 성공하면 커밋메소드 호출
 		} else {
-			jdbcTemplate.rollback(conn); // 인서트 실패하면 롤백메소드 호출
+			session.rollback(); // 인서트 실패하면 롤백메소드 호출
 		}
 		//연결닫아주기
-		jdbcTemplate.close(conn);
+		session.close();
 		return result;
 	}
 
 	public Member loginCheck(Member member) {
-		Connection conn = jdbcTemplate.createConnection();
-		Member mOne = mDao.loginCheck(conn, member);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.loginCheck(session, member);
+		session.close();
 		return mOne;
 	}
 
 	public Member selectOneById(String memberId) {
-		Connection conn = jdbcTemplate.createConnection();
-		Member member = mDao.selectOneById(conn, memberId);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member member = mDao.selectOneById(session, memberId);
+		session.close();
 		return member;
 	}
 
 	public Member confirmPw(Member member) {
-		Connection conn = jdbcTemplate.createConnection();
-		Member mOne = mDao.confirmPw(conn, member);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.confirmPw(session, member);
+		session.close();
 		return mOne;
 	}
 
 	public int changePw(Member member) {
-		Connection conn = jdbcTemplate.createConnection();
-		int result = mDao.changePw(conn, member);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = mDao.changePw(session, member);
+		//dml은 반드시 결과값을 확인해서 커밋과 롤백해줘야함 
+		if(result > 0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
+		session.close();
 		return result;
 	}
 
 	public Member findId(Member member) {
-		Connection conn = jdbcTemplate.createConnection();
-		Member mOne = mDao.findId(conn, member);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.findId(session, member);
+		session.close();
 		return mOne;
 	}
 
