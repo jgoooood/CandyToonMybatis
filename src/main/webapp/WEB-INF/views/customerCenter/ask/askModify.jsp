@@ -33,11 +33,11 @@
 		                    </tr>
 		                    <tr id="askTitle">
 		                        <th>제목</th>
-		                        <td><input type="text" name="askSubject" required placeholder="제목을 입력해주세요."></td>
+		                        <td><input type="text" name="askSubject" required placeholder="제목을 입력해주세요." value="${ask.askSubject }"></td>
 		                    </tr>
 		                    <tr id="askContent">
 		                        <th>내용</th>
-		                        <td><textarea name="askContent" placeholder="문의하실 내용을 입력해주세요." required></textarea></td>
+		                        <td><textarea name="askContent" placeholder="문의하실 내용을 입력해주세요." required>${ask.askContent }</textarea></td>
 		                    </tr>
 		                </table>
 		            </div>

@@ -1,4 +1,4 @@
-package customerCenter.ask.controller;
+package ask.controller;
 
 import java.io.IOException;
 
@@ -7,10 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import customerCenter.ask.model.service.AskService;
-import customerCenter.ask.model.vo.Ask;
+import ask.model.service.AskService;
+import ask.model.vo.Ask;
 
 /**
  * Servlet implementation class AskformController

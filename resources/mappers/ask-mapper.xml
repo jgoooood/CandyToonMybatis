@@ -7,7 +7,7 @@
 <!-- 1. mapper의 이름 지정:여러개이기 때문 -->
 <mapper namespace="AskMapper">
 	<!-- 2. resultMap 설정 -->
-	<resultMap type="customerCenter.ask.model.vo.Ask" id="askResultMap">
+	<resultMap type="ask.model.vo.Ask" id="askResultMap">
 		<id 	property="askNo" 	 	 column="ASK_NO" />
 		<result property="askCategory" 	 column="ASK_CATEGORY" />
 		<result property="askSubject" 	 column="ASK_SUBJECT" />

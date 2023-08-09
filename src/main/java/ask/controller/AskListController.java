@@ -1,4 +1,4 @@
-package customerCenter.ask.controller;
+package ask.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import customerCenter.ask.model.service.AskService;
-import customerCenter.ask.model.vo.Ask;
-import customerCenter.ask.model.vo.PageData;
+import ask.model.service.AskService;
+import ask.model.vo.Ask;
+import ask.model.vo.PageData;
 
 /**
  * Servlet implementation class AskController

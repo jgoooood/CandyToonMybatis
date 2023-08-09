@@ -1,4 +1,4 @@
-package customerCenter.fnq.controller;
+package fnq.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

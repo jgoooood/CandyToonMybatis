@@ -1,4 +1,4 @@
-package customerCenter.ask.model.vo;
+package ask.model.vo;
 
 import java.sql.Date;
 

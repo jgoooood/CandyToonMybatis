@@ -1,11 +1,11 @@
-package customerCenter.ask.model.dao;
+package ask.model.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
-import customerCenter.ask.model.vo.Ask;
+import ask.model.vo.Ask;
 
 public class AskDao {
 	public int insertAsk(SqlSession session, Ask ask) {

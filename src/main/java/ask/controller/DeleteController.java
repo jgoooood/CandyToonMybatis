@@ -1,4 +1,4 @@
-package customerCenter.ask.controller;
+package ask.controller;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import customerCenter.ask.model.service.AskService;
+import ask.model.service.AskService;
 
 /**
  * Servlet implementation class DeleteController

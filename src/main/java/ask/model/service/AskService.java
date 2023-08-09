@@ -1,15 +1,13 @@
-package customerCenter.ask.model.service;
+package ask.model.service;
 
-import java.sql.Connection;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import common.JDBCTemplate;
+import ask.model.dao.AskDao;
+import ask.model.vo.Ask;
+import ask.model.vo.PageData;
 import common.SqlSessionTemplate;
-import customerCenter.ask.model.dao.AskDao;
-import customerCenter.ask.model.vo.Ask;
-import customerCenter.ask.model.vo.PageData;
 
 public class AskService {
 	AskDao aDao;
